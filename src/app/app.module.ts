@@ -10,6 +10,11 @@ import { RegisterComponent } from './component/register/register.component';
 import { LoginComponent } from './component/login/login.component';
 import { AboutComponent } from './component/about/about.component';
 import { NavbarComponent } from './component/navbar/navbar.component';
+import { OneWayComponent } from './component/data/one-way/one-way.component';
+import { TwoWayComponent } from './component/data/two-way/two-way.component';
+import { CssBindingComponent } from './component/data/css-binding/css-binding.component';
+import { EventBindingComponent } from './component/data/event-binding/event-binding.component';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -20,11 +25,16 @@ import { NavbarComponent } from './component/navbar/navbar.component';
     RegisterComponent,
     LoginComponent,
     AboutComponent,
-    NavbarComponent    
+    NavbarComponent,
+    OneWayComponent,
+    TwoWayComponent,
+    CssBindingComponent,
+    EventBindingComponent    
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
