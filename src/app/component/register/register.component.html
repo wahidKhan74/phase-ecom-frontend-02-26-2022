@@ -1,7 +1,7 @@
 <!-- Bootstrap Form with validation -->
 <div class="container form-container">
     <h1>Registration Form</h1>
-    <form  #registrationForm class="form-validate" novalidate >
+    <form  #registrationForm="ngForm" class="form-validate" novalidate >
      <div class="form-row">
         <!-- First Name -->
         <div class="col-sm-6">
@@ -22,12 +22,13 @@
           <div class="form-group">
             <label for="lastName">Last Name</label>
             <input type="text" class="form-control" name="lastName" id="lastName" #lastName="ngModel" [(ngModel)]="user.lastName" aria-describedby="lastNameHelp"  minlength="3" maxlength="15" required>
-            <div class="valid-feedback">
-              Looks good!
-            </div>
-            <div class="invalid-feedback">
-                Please Enter a correct last name !
-            </div>
+            <small *ngIf="hasError(lastName)" [class]="hasError(lastName) ? 'has-error' :''">
+              <div *ngIf="lastName?.errors">
+                  <span *ngIf="lastName?.errors?.['required']">Last Name is a required field</span>
+                  <span *ngIf="lastName?.errors?.['minlength']">Last Name is a min 3 char long field</span>
+                  <span *ngIf="lastName?.errors?.['maxlength']">Last Name is a max 15 char long field</span>
+              </div>
+            </small>
           </div>
         </div>
      </div>
@@ -37,13 +38,16 @@
        <div class="col-sm-6">
         <div class="form-group">
           <label for="email">Email address</label>
-          <input type="email" class="form-control" name="email" id="email" #email="ngModel" [(ngModel)]="user.email" aria-describedby="emailHelp" required>
-          <div class="valid-feedback">
-            Looks good!
-          </div>
-          <div class="invalid-feedback">
-              Please Enter a correct email address !
-          </div>
+          <input type="email" class="form-control" name="email" id="email" #email="ngModel" [(ngModel)]="user.email" 
+          aria-describedby="emailHelp" minlength="6" maxlength="20" required pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$"  >
+          <small *ngIf="hasError(email)" [class]="hasError(email) ? 'has-error' :''">
+            <div *ngIf="email?.errors">
+                <span *ngIf="email?.errors?.['required']">Email is a required field</span>
+                <span *ngIf="email?.errors?.['minlength']">Email is a min 6 char long field</span>
+                <span *ngIf="email?.errors?.['maxlength']">Email is a max 20 char long field</span>
+                <span *ngIf="email?.errors?.['pattern']">Please enter a valid email address</span>
+            </div>
+          </small>
         </div>
        </div>
        <!-- Password -->
@@ -51,12 +55,13 @@
         <div class="form-group">
           <label for="password">Password</label>
           <input type="password" class="form-control" name="password" id="password" #password="ngModel" [(ngModel)]="user.password" aria-describedby="passwordHelp" minlength="6" maxlength="15"  required>
-          <div class="valid-feedback">
-            Looks good!
-          </div>
-          <div class="invalid-feedback">
-              Please Enter a correct apssword !
-          </div>
+          <small *ngIf="hasError(password)" [class]="hasError(password) ? 'has-error' :''">
+            <div *ngIf="password?.errors">
+                <span *ngIf="password?.errors?.['required']">Password is a required field</span>
+                <span *ngIf="password?.errors?.['minlength']">Password is a min 6 char long field</span>
+                <span *ngIf="password?.errors?.['maxlength']">Password is a max 15 char long field</span>
+            </div>
+          </small>
         </div>
        </div>
      </div>
@@ -70,22 +75,20 @@
           <option value="CA">California</option>
           <option value="HW">Hawaii</option>
         </select>
-        <div class="valid-feedback">
-          Looks good!
-        </div>
-        <div class="invalid-feedback">
-            Please choose correct sate !
-        </div>
+        <small *ngIf="hasError(state)" [class]="hasError(state) ? 'has-error' :''">
+          <div *ngIf="state?.errors">
+              <span *ngIf="state?.errors?.['required']">State is a required field</span>
+          </div>
+        </small>
       </div>
       <div class="form-group col-sm-6">
         <label for="zipcode">Zip</label>
         <input type="number" class="form-control" name="zipcode" id="zipcode" #zipcode="ngModel"  [(ngModel)]="user.zipcode" required>
-        <div class="valid-feedback">
-          Looks good!
-        </div>
-        <div class="invalid-feedback">
-            Please \Enter correct zip code!
-        </div>
+        <small *ngIf="hasError(zipcode)" [class]="hasError(zipcode) ? 'has-error' :''">
+          <div *ngIf="zipcode?.errors">
+              <span *ngIf="zipcode?.errors?.['required']">Zipcode is a required field</span>
+          </div>
+        </small>
       </div>
      </div> 
      
@@ -96,12 +99,11 @@
           <label class="form-check-label" for="agree">
             Please check the  terms and conditions!
           </label>
-          <div class="valid-feedback">
-            Looks good!
-          </div>
-          <div class="invalid-feedback">
-            Please check the  terms and conditions!
-          </div>
+          <small *ngIf="hasError(agree)" [class]="hasError(agree) ? 'has-error' :''">
+            <div *ngIf="agree?.errors">
+                <span *ngIf="agree?.errors?.['required']"> Please check the  terms and conditions!</span>
+            </div>
+          </small>
         </div>
       </div>
     </div>

@@ -24,14 +24,14 @@ export class RegisterComponent implements OnInit {
 
 
   onSubmit(form:any) {
-    console.log("The form has submited");
     if(form.valid){
       this.submitted = true;
       console.log(this.user);
+      console.log("The form has submited");
     } else{
       this.validate(form);
-    }
-    
+      console.log("The form cannot be submited");
+    }    
   }
 
   hasError(field:any) {
@@ -39,14 +39,14 @@ export class RegisterComponent implements OnInit {
   }
 
   validate(form:any){
-    console.log(form);
-    
-    Object.keys(form.controls).forEach(field =>{
-      const control = form.controls[field];
-      control.markAsTouched({ onlySelft : true});
-    })
+    // console.log(form);
+    // console.log(form.controls);
+     Object.keys(form.controls).forEach(field => {
+        const control = form.controls[field];
+        control.markAsTouched({ onlySelf: true});
+      });
   }
-
+  
 }
 
 interface User {
