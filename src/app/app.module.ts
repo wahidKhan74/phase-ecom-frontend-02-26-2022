@@ -14,7 +14,7 @@ import { OneWayComponent } from './component/data/one-way/one-way.component';
 import { TwoWayComponent } from './component/data/two-way/two-way.component';
 import { CssBindingComponent } from './component/data/css-binding/css-binding.component';
 import { EventBindingComponent } from './component/data/event-binding/event-binding.component';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { NotFoundComponent } from './component/not-found/not-found.component';
 import { ProductsModule } from './component/products/products.module';
 
@@ -39,7 +39,8 @@ import { ProductsModule } from './component/products/products.module';
     BrowserModule,
     AppRoutingModule,
     ProductsModule,
-    FormsModule
+    FormsModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
