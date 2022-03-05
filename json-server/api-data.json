@@ -1,0 +1,30 @@
+{
+  "products": [
+    {
+      "id": 102,
+      "name": "Apple Watch SE Smartwatch",
+      "price": "30900",
+      "description": "Apple Watch SE Smartwatch (GPS, 44mm) (Heart Rate Monitoring, MYDT2HN/A, Space Grey/Black, Sport Band)"
+    },
+    {
+      "id": 103,
+      "name": "LG 22 inchIPS Monitor ",
+      "price": "656756",
+      "description": "Full HD, with VGA, HDMI, DVI, Audio Out Ports, Made in India - 22MP68VQ (Black), Small"
+    },
+    {
+      "name": "Apple MacBook Air (MGND3HN/A) ",
+      "price": "83900",
+      "description": "Apple MacBook Air (MGND3HN/A) M1 Chip macOS Big Sur Laptop (8GB RAM, 256GB SSD, Apple M1 GPU, 33.78cm, Gold)",
+      "id": 104
+    },
+    {
+      "name": "Dell New Latitude Laptop ",
+      "price": "84347.56",
+      "description": "11th Generation Intel® Core™ i3-1125G4 (8 MB cache, 4 cores, 8 threads, 2.00 GHz to 3.70 GHz Turbo)",
+      "id": 105
+    }
+  ],
+  "users": [],
+  "payments": []
+}

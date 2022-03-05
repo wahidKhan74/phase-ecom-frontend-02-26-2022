@@ -17,6 +17,7 @@ import { EventBindingComponent } from './component/data/event-binding/event-bind
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { NotFoundComponent } from './component/not-found/not-found.component';
 import { ProductsModule } from './component/products/products.module';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -40,7 +41,8 @@ import { ProductsModule } from './component/products/products.module';
     AppRoutingModule,
     ProductsModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

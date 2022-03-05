@@ -5,6 +5,8 @@ import { CreateComponent } from './create/create.component';
 import { UpdateComponent } from './update/update.component';
 import { ListComponent } from './list/list.component';
 import { DetailsComponent } from './details/details.component';
+import { ProductService } from 'src/app/service/product.service';
+import { ReactiveFormsModule } from '@angular/forms';
 
 
 
@@ -17,7 +19,9 @@ import { DetailsComponent } from './details/details.component';
     DetailsComponent
   ],
   imports: [
-    CommonModule
-  ]
+    CommonModule,
+    ReactiveFormsModule
+  ],
+  providers:[ProductService]
 })
 export class ProductsModule { }
