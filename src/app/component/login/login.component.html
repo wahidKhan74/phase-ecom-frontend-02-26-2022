@@ -1,6 +1,6 @@
 <!-- Bootstrap Form with validation -->
 <div class="container form-container">
-    <h1 style="text-align: center;">Login Form</h1>
+    <h1 style="text-align: center;" highlight>Login Form</h1>
     <div *ngIf="message!=''" class="alert alert-danger" role="alert">
       {{message}}
     </div>
@@ -13,7 +13,7 @@
         <div class="form-group">
           <label for="email">Email address</label>
           <input type="email" class="form-control" name="email" id="email" formControlName="email"
-          aria-describedby="emailHelp">
+          aria-describedby="emailHelp" inputformator>
           <small *ngIf="hasError('email')" [class]="hasError('email') ? 'has-error' :''">
             <div *ngIf="email?.errors">
                 <span *ngIf="email?.errors?.['required']">Email is a required field</span>

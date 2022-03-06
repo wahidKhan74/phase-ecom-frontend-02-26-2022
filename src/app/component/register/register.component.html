@@ -1,13 +1,14 @@
 <!-- Bootstrap Form with validation -->
 <div class="container form-container">
-    <h1>Registration Form</h1>
+    <h1 highlight>Registration Form</h1>
     <form  #registrationForm="ngForm" class="form-validate" novalidate >
      <div class="form-row">
         <!-- First Name -->
         <div class="col-sm-6">
           <div class="form-group">
             <label for="firstName">First Name</label>
-            <input type="text" class="form-control" name="firstName"  #firstName="ngModel" [(ngModel)]="user.firstName" id="firstName" aria-describedby="firstNameHelp" minlength="3" maxlength="15" required>
+            <input type="text" class="form-control" name="firstName"  #firstName="ngModel" [(ngModel)]="user.firstName" id="firstName" 
+            aria-describedby="firstNameHelp" minlength="3" maxlength="15" required inputformator>
             <small *ngIf="hasError(firstName)" [class]="hasError(firstName) ? 'has-error' :''">
               <div *ngIf="firstName?.errors">
                   <span *ngIf="firstName?.errors?.['required']">First Name is a required field</span>
@@ -21,7 +22,8 @@
         <div class="col-sm-6">
           <div class="form-group">
             <label for="lastName">Last Name</label>
-            <input type="text" class="form-control" name="lastName" id="lastName" #lastName="ngModel" [(ngModel)]="user.lastName" aria-describedby="lastNameHelp"  minlength="3" maxlength="15" required>
+            <input type="text" class="form-control" name="lastName" id="lastName" #lastName="ngModel" 
+            [(ngModel)]="user.lastName" aria-describedby="lastNameHelp"  minlength="3" maxlength="15" required inputformator>
             <small *ngIf="hasError(lastName)" [class]="hasError(lastName) ? 'has-error' :''">
               <div *ngIf="lastName?.errors">
                   <span *ngIf="lastName?.errors?.['required']">Last Name is a required field</span>

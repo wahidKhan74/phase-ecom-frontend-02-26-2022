@@ -19,6 +19,10 @@ import { NotFoundComponent } from './component/not-found/not-found.component';
 import { ProductsModule } from './component/products/products.module';
 import { HttpClientModule } from '@angular/common/http';
 import { UserService } from './service/user.service';
+import { HighlightDirective } from './directive/highlight.directive';
+import { InputformatorDirective } from './directive/inputformator.directive';
+import { SummaryPipe } from './pipe/summary.pipe';
+import { QuotesPipe } from './pipe/quotes.pipe';
 
 @NgModule({
   declarations: [
@@ -35,7 +39,8 @@ import { UserService } from './service/user.service';
     CssBindingComponent,
     EventBindingComponent,
     NotFoundComponent,
-    
+    HighlightDirective,
+    InputformatorDirective,
   ],
   imports: [
     BrowserModule,
@@ -45,7 +50,7 @@ import { UserService } from './service/user.service';
     ReactiveFormsModule,
     HttpClientModule
   ],
-  providers: [UserService],
+  providers: [UserService, SummaryPipe, QuotesPipe],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

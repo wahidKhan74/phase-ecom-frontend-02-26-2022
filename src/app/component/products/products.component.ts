@@ -12,6 +12,7 @@ export class ProductsComponent implements OnInit {
 
   public products:any;
   public viewMode:string ='default';
+  public currentDateTime = new Date();
   // public backGroundColor:string='grey';
   // inject data service to load data
   constructor(private productSrv : ProductService, private router : Router) { }

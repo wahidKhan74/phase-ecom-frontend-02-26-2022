@@ -7,6 +7,8 @@ import { ListComponent } from './list/list.component';
 import { DetailsComponent } from './details/details.component';
 import { ProductService } from 'src/app/service/product.service';
 import { ReactiveFormsModule } from '@angular/forms';
+import { SummaryPipe } from 'src/app/pipe/summary.pipe';
+import { QuotesPipe } from 'src/app/pipe/quotes.pipe';
 
 
 
@@ -16,12 +18,14 @@ import { ReactiveFormsModule } from '@angular/forms';
     CreateComponent,
     UpdateComponent,
     ListComponent,
-    DetailsComponent
+    DetailsComponent,
+    SummaryPipe,
+    QuotesPipe
   ],
   imports: [
     CommonModule,
     ReactiveFormsModule
   ],
-  providers:[ProductService]
+  providers:[ProductService,SummaryPipe,QuotesPipe]
 })
 export class ProductsModule { }
