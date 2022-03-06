@@ -32,6 +32,8 @@ constructor(private formBuilder : FormBuilder,private userSrv:UserService, priva
         if(res!=null && res!=undefined && res.length!=0) {
           if(res[0].password === this.password.value ) { 
             // console.log("Login Successfull !");
+            // localStorage.setItem("user",JSON.stringify(res[0]));
+            sessionStorage.setItem("user",JSON.stringify(res[0]));
             this.router.navigateByUrl("/products");
           } else {
             this.message = "User password does not match";
