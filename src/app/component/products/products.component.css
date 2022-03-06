@@ -1,0 +1,14 @@
+.style-one {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 20px;
+}
+
+.style-two {
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 20px;
+}
+
+.style-three {
+    color:red;
+    text-align: center;
+}

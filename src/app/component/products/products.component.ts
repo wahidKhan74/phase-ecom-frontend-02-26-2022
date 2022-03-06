@@ -11,7 +11,8 @@ import { ProductService } from 'src/app/service/product.service';
 export class ProductsComponent implements OnInit {
 
   public products:any;
-
+  public viewMode:string ='default';
+  // public backGroundColor:string='grey';
   // inject data service to load data
   constructor(private productSrv : ProductService, private router : Router) { }
 

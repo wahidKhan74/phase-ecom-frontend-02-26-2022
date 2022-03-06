@@ -18,7 +18,7 @@ export class OneWayComponent implements OnInit {
     age:20
   }
 
-  
+ 
   constructor() { }
 
   ngOnInit(): void {

@@ -23,6 +23,11 @@
       "price": "84347.56",
       "description": "11th Generation Intel® Core™ i3-1125G4 (8 MB cache, 4 cores, 8 threads, 2.00 GHz to 3.70 GHz Turbo)",
       "id": 105
+    }, {
+      "name": "Free Laptop ",
+      "price": 0,
+      "description": "11th Generation Intel® Core™ i3-1125G4 (8 MB cache, 4 cores, 8 threads, 2.00 GHz to 3.70 GHz Turbo)",
+      "id": 106
     }
   ],
   "users": [
