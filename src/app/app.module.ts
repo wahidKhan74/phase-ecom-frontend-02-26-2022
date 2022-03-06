@@ -18,6 +18,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { NotFoundComponent } from './component/not-found/not-found.component';
 import { ProductsModule } from './component/products/products.module';
 import { HttpClientModule } from '@angular/common/http';
+import { UserService } from './service/user.service';
 
 @NgModule({
   declarations: [
@@ -44,7 +45,7 @@ import { HttpClientModule } from '@angular/common/http';
     ReactiveFormsModule,
     HttpClientModule
   ],
-  providers: [],
+  providers: [UserService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

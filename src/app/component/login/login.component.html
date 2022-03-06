@@ -1,6 +1,9 @@
 <!-- Bootstrap Form with validation -->
 <div class="container form-container">
     <h1 style="text-align: center;">Login Form</h1>
+    <div *ngIf="message!=''" class="alert alert-danger" role="alert">
+      {{message}}
+    </div>
     <form  class="form-validate" novalidate [formGroup]="loginForm" (ngSubmit)="onSubmit(loginForm)">
     
      <div class="form-row">

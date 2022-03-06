@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+import { UserService } from 'src/app/service/user.service';
 
 @Component({
   selector: 'app-register',
@@ -17,7 +19,7 @@ export class RegisterComponent implements OnInit {
     agree:false
   }
   public submitted:boolean = false;
-  constructor() { }
+  constructor(private userSrv:UserService, private router:Router) { }
 
   ngOnInit(): void {
   }
@@ -26,8 +28,12 @@ export class RegisterComponent implements OnInit {
   onSubmit(form:any) {
     if(form.valid){
       this.submitted = true;
-      console.log(this.user);
-      console.log("The form has submited");
+      // console.log(this.user);
+      this.userSrv.addUser(this.user).subscribe(res=>{
+        // console.log(res);
+        this.router.navigateByUrl("/login");
+        console.log("The user has registered successfully");
+      });      
     } else{
       this.validate(form);
       console.log("The form cannot be submited");

@@ -25,6 +25,27 @@
       "id": 105
     }
   ],
-  "users": [],
+  "users": [
+    {
+      "firstName": "John",
+      "lastName": "Smith",
+      "password": "john@123",
+      "email": "john@gmail.com",
+      "state": "CA",
+      "zipcode": 678675,
+      "agree": true,
+      "id": 1
+    },
+    {
+      "firstName": "Mike",
+      "lastName": "Smith",
+      "password": "mike@123",
+      "email": "mike@gmail.com",
+      "state": "TX",
+      "zipcode": 56567,
+      "agree": true,
+      "id": 2
+    }
+  ],
   "payments": []
 }
